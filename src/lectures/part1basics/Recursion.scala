@@ -24,6 +24,7 @@ object Recursion extends App {
 
   def anotherFactorial(n: Int): BigInt = {
     // add '@tailrec' annotation before the function to tell the compiler that the function is supposed to be TAIL RECURSIVE
+    @tailrec
     def facHelper(x: Int, accumulator: BigInt): BigInt = {
       if (x <= 1) accumulator
       else facHelper(x - 1, x * accumulator) // TAIL RECURSION = use recursive call as the LAST expression
